@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logo from "./rr11logo.jpg";
+// import Logo from "./rr11logo.jpg";
 import AddRangeForm from "./AddRangeForm";
 import AddSingleForm from "./AddSingleForm";
 import RangeList from "./RangeList";
@@ -78,13 +78,13 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-light bg-light">
           <a className="navbar-brand">
-            <img
+            {/* <img
               id="rr11logo"
               src={Logo}
               height="30"
               className="d-inline-block align-top"
               alt=""
-            />
+            /> */}
             Age Group Generator
           </a>
           <button
@@ -151,7 +151,7 @@ class App extends Component {
           <div className="container">
             <hr />
             <p>Made by <a href="https://twitter.com/quinnmcphail">Quinn McPhail</a></p>
-            <p>race|result 11 Logo &copy; race result AG</p>
+            {/* <p>race|result 11 Logo &copy; race result AG</p> */}
           </div>
         </footer>
       </div>
