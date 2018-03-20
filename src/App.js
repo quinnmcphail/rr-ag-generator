@@ -150,7 +150,7 @@ class App extends Component {
         <footer className="text-muted">
           <div className="container">
             <hr />
-            <p>Made by <a href="https://twitter.com/quinnmcphail">Quinn McPhail</a></p>
+            <p>&copy; {`${new Date().getFullYear()}`} <a href="https://twitter.com/quinnmcphail">Quinn McPhail</a></p>
             {/* <p>race|result 11 Logo &copy; race result AG</p> */}
           </div>
         </footer>
