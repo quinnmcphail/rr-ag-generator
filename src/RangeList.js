@@ -4,6 +4,9 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/fontawesome-free-solid";
 
 class RangeList extends Component {
+  deleteRanges = () => {
+    this.props.deleteRanges();
+  };
   render() {
     return (
       <table className="table desktop">
@@ -15,7 +18,12 @@ class RangeList extends Component {
             <th scope="col">From Age</th>
             <th scope="col">To Age</th>
             <th scope="col">
-              <FontAwesomeIcon icon={faTrashAlt} />
+              <FontAwesomeIcon
+                icon={faTrashAlt}
+                className="text-danger"
+                onClick={this.deleteRanges}
+                style={{ cursor: "pointer" }}
+              />
             </th>
           </tr>
         </thead>

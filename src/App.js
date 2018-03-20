@@ -142,6 +142,7 @@ class App extends Component {
                 <RangeList
                   ranges={this.state.ranges}
                   removeRange={this.removeRange}
+                  deleteRanges={this.deleteRanges}
                 />
               </div>
             </div>

@@ -14,8 +14,8 @@ class Range extends Component {
         <td>{this.props.range.gender}</td>
         <td>{this.props.range.start}</td>
         <td>{this.props.range.end}</td>
-        <td onClick={this.removeRange}>
-          <FontAwesomeIcon icon={faTrashAlt} />
+        <td>
+          <FontAwesomeIcon icon={faTrashAlt} className="text-danger" onClick={this.removeRange} style={{cursor:'pointer'}}/>
         </td>
       </tr>
     );
