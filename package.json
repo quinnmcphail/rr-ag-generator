@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && echo '/*    404' > build/_redirects",
+    "build": "react-scripts build && echo '/*    404' > build/_redirects && echo '/*\n\tStrict-Transport-Security: max-age=300; includeSubDomains\n\tX-Content-Type-Options: nosniff\n\tX-Frame-Options: DENY\n\tX-XSS-Protection: 1; mode=block' > build/_headers",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
