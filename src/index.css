@@ -1,0 +1,17 @@
+#rr11logo {
+  margin: 0 5px;
+}
+
+.desktop {
+  display: none !important;
+}
+
+.alert {
+  margin: 15px 0;
+}
+
+@media (min-width: 992px) {
+  .desktop {
+    display: table !important;
+  }
+}
