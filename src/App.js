@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import Logo from "./rr11logo.jpg";
 import AddRangeForm from "./AddRangeForm";
+import AddSingleForm from "./AddSingleForm";
 import RangeList from "./RangeList";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import {
   faExclamationTriangle,
   faDownload
 } from "@fortawesome/fontawesome-free-solid";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemTitle,
+  AccordionItemBody
+} from "react-accessible-accordion";
+import "react-accessible-accordion/dist/fancy-example.css";
 
 class App extends Component {
   state = {
@@ -84,7 +92,7 @@ class App extends Component {
             className="btn btn-success d-none d-lg-block"
             onClick={this.downloadAgeGroups}
           >
-            <FontAwesomeIcon icon={faDownload} /> Download
+            <FontAwesomeIcon icon={faDownload} /> Download .LVS File
           </button>
         </nav>
         <div className="container">
@@ -96,25 +104,56 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <div className="row d-none d-lg-block">
-            <div className="col">
-              <AddRangeForm
-                ranges={this.state.ranges}
-                addRange={this.addRange}
-                deleteRanges={this.deleteRanges}
-              />
+          <Accordion className="accordion d-none d-lg-block">
+            <AccordionItem>
+              <AccordionItemTitle>
+                <h4>Add Age Group Range</h4>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                <div className="row">
+                  <div className="col">
+                    <AddRangeForm
+                      addRange={this.addRange}
+                      deleteRanges={this.deleteRanges}
+                    />
+                  </div>
+                </div>
+              </AccordionItemBody>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionItemTitle>
+                <h4>Add Single Age Group</h4>
+              </AccordionItemTitle>
+              <AccordionItemBody>
+                <div className="row">
+                  <div className="col">
+                    <AddSingleForm
+                      addRange={this.addRange}
+                      deleteRanges={this.deleteRanges}
+                    />
+                  </div>
+                </div>
+              </AccordionItemBody>
+            </AccordionItem>
+          </Accordion>
+          {this.state.ranges.length > 0 && (
+            <div className="row d-none d-lg-block">
+              <div className="col">
+                <RangeList
+                  ranges={this.state.ranges}
+                  removeRange={this.removeRange}
+                />
+              </div>
             </div>
-          </div>
-          <hr className="d-none d-lg-block" />
-          <div className="row d-none d-lg-block">
-            <div className="col">
-              <RangeList
-                ranges={this.state.ranges}
-                removeRange={this.removeRange}
-              />
-            </div>
-          </div>
+          )}
         </div>
+        <footer className="text-muted">
+          <div className="container">
+            <hr />
+            <p>Made by <a href="https://twitter.com/quinnmcphail">Quinn McPhail</a></p>
+            <p>race|result 11 Logo &copy; race result AG</p>
+          </div>
+        </footer>
       </div>
     );
   }
