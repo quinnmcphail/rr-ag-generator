@@ -46,7 +46,7 @@ class AddRangeForm extends Component {
           currentAge +
           (Number(currentRange.rangeLength) - 1 > 0
             ? Number(currentRange.rangeLength) - 1
-            : 1),
+            : Number(currentRange.rangeLength) === 0 ? 0 : 1),
         name: currentRange.name,
         abbr: currentRange.abbr
       };
